@@ -15,31 +15,20 @@ const projects = [
   },
   {
     title: "Mindset Test",
-    description: "Test og utvikle ditt tankesett.",
+    description: "Fastlåst eller er talent trenbart, svar på noen spørsmål og få en forskningsbasert tilbakemelding.",
     url: "https://mindset-test.org",
     tags: ["Web", "Helse"],
   },
   {
     title: "Vita Test",
-    description: "Helhetlig helsetest og livskvalitetsvurdering.",
+    description: "En gammel ide om matching og problemløsning i livet, nå med litt AI-inspirert fokus",
     url: "https://vita-test.org",
     tags: ["Web", "Helse"],
   },
-  {
-    title: "PAC-RUN",
-    description: "Løpeapp med gamification-elementer.",
-    url: "https://pac.run",
-    tags: ["App", "Spill"],
-  },
-  {
-    title: "DadJokes Plus",
-    description: "Homey-app som oppdaterer en TAG med en fersk dad joke. Perfekt for litt ekstra humør i smarthjemmet.",
-    url: "https://homey.app/no-no/app/com.dmz.dadjokesplus/DadJokes-Plus/test/",
-    tags: ["Homey", "Automasjon"],
-  },
+// ... keep existing code
   {
     title: "CAx6.6",
-    description: "Homey-app for styring av Russound CA-serie multirom-forsterkere via ASCII RS-232 over TCP.",
+    description: "Homey-app for styring av Russound CA-serie multirom-forsterkere via RS-232 over TCP.",
     url: "https://homey.app/no-no/app/com.dmz.russound/CAx6.6/test/",
     tags: ["Homey", "Russound", "RS-232"],
   },
@@ -87,7 +76,7 @@ const Projects = () => {
           <div className="flex flex-wrap gap-x-10 gap-y-2 text-sm text-muted-foreground">
             <span>🧩 Læring — enklere å bygge videre</span>
             <span>⚡ Rask, responsiv og robust</span>
-            <span>🔍 SEO-optimalisert og klar for deling</span>
+            <span>🔍 Deler det meste på GitHub </span>
           </div>
         </div>
       </div>
