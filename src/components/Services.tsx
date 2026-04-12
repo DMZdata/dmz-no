@@ -5,8 +5,8 @@ const services = [
   { icon: HeartPulse, title: "Helse tech", text: "Rådgivning om bruk av teknologi i helse." },
   { icon: Home, title: "KNX & Homey", text: "KNX-programmering eller Homey magi til bolig og mindre næring." },
   { icon: Cpu, title: "Smarthus", text: "Generell rådgivning innen smarthusteknologi uten at det koster skjorta." },
-  { icon: Wifi, title: "Nettverk og sikkerhet", text: "Er nettverket ditt sikkert nok? Vi kan gi gode råd." },
-  { icon: Shield, title: "Enkel sikkerhetstesting", text: "Vi kan utføre enkle sikkerhets- og sårbarhetstester." },
+  { icon: Wifi, title: "Produktutvikling", text: "Et nytt produkt, en dings, en skrape eller en lysende bokstav" },
+  { icon: Shield, title: "Utvikling", text: "En app, en nettside eller annet snacks " },
 ];
 
 const Services = () => {

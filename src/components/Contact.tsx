@@ -13,7 +13,8 @@ const Contact = () => {
             <p className="text-[11px] tracking-[0.3em] uppercase text-muted-foreground mb-3">Om oss</p>
             <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6">Hvem er vi</h2>
             <p className="text-muted-foreground leading-relaxed mb-8">
-              Vi er et lite rådgivende konsulentselskap med kontor i Porsgrunn. Erfaring og kjennskap til produkter, løsninger, konvensjonelle og utradisjonelle gjør oss i stand til å gi nøytrale råd og support til de fleste vanlige typer prosjekter. Vi har bestemt oss for å vente med å gå på BØRS, dog fremtiden er vanskelig å spå.
+              Vi er et lite rådgivende konsulentselskap med kontor i Porsgrunn. Erfaring og kjennskap til produkter, løsninger, konvensjonelle og utradisjonelle gjør oss i stand til å gi nøytrale råd og support til de fleste vanlige typer prosjekter. Vi har bestemt oss for å vente med å gå på BØRS, dog fremtiden er vanskelig å spå. <br />
+              Du når oss på kontor@dmz.on
             </p>
 
             <div className="space-y-3 text-sm">
