@@ -1,4 +1,4 @@
-import { Sun, Moon, Menu, X } from "lucide-react";
+import { Sun, Moon, Menu, X, Monitor, Apple } from "lucide-react";
 import { useState } from "react";
 import { useTheme } from "./ThemeProvider";
 
@@ -29,6 +29,24 @@ const Navbar = () => {
               {l.label}
             </a>
           ))}
+          <a
+            href="https://download.teamviewer.com/download/TeamViewerQS.exe"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-1.5 text-muted-foreground/50 hover:text-foreground transition-colors"
+            title="Fjernhjelp Windows"
+          >
+            <Monitor className="h-3.5 w-3.5" />
+          </a>
+          <a
+            href="https://download.teamviewer.com/download/TeamViewerQS.dmg"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-1.5 text-muted-foreground/50 hover:text-foreground transition-colors"
+            title="Fjernhjelp Mac"
+          >
+            <Apple className="h-3.5 w-3.5" />
+          </a>
           <button
             onClick={toggleTheme}
             className="ml-2 p-2 rounded-full text-muted-foreground hover:text-foreground transition-colors"
