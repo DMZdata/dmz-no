@@ -30,12 +30,12 @@ const BackgroundEffect = () => {
     window.addEventListener("resize", resize);
 
     // Floating particles
-    const particles: Particle[] = Array.from({ length: 40 }, () => ({
+    const particles: Particle[] = Array.from({ length: 50 }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
       vx: (Math.random() - 0.5) * 0.3,
       vy: (Math.random() - 0.5) * 0.3,
-      r: Math.random() * 2 + 0.5,
+      r: Math.random() * 3 + 1,
     }));
 
     const draw = () => {
@@ -50,7 +50,7 @@ const BackgroundEffect = () => {
         { x: canvas.width * 0.75 + Math.cos(time * 0.6) * 120, y: canvas.height * 0.65 + Math.sin(time * 0.5) * 80, r: 280 },
       ];
 
-      const orbAlpha = isDark ? 0.035 : 0.025;
+      const orbAlpha = isDark ? 0.08 : 0.06;
       orbs.forEach((orb) => {
         const grad = ctx.createRadialGradient(orb.x, orb.y, 0, orb.x, orb.y, orb.r);
         const color = isDark ? "255,255,255" : "0,0,0";
@@ -64,7 +64,7 @@ const BackgroundEffect = () => {
 
       // Floating dots
       const dotColor = isDark ? "255,255,255" : "0,0,0";
-      const dotAlpha = isDark ? 0.08 : 0.06;
+      const dotAlpha = isDark ? 0.18 : 0.12;
 
       particles.forEach((p) => {
         p.x += p.vx;
@@ -81,7 +81,7 @@ const BackgroundEffect = () => {
       });
 
       // Subtle connection lines between nearby particles
-      const lineAlpha = isDark ? 0.03 : 0.02;
+      const lineAlpha = isDark ? 0.08 : 0.05;
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x;
@@ -108,7 +108,7 @@ const BackgroundEffect = () => {
     };
   }, [theme]);
 
-  return <canvas ref={canvasRef} className="fixed inset-0 pointer-events-none z-0" />;
+  return <canvas ref={canvasRef} className="fixed inset-0 pointer-events-none" style={{ zIndex: 0 }} />;
 };
 
 export default BackgroundEffect;
