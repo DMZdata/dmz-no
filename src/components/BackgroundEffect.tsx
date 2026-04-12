@@ -12,7 +12,7 @@ const BackgroundEffect = () => {
     if (!ctx) return;
 
     let animationId: number;
-    const particles: { x: number; y: number; vx: number; vy: number; r: number }[] = [];
+    let time = 0;
 
     const resize = () => {
       canvas.width = window.innerWidth;
@@ -21,48 +21,28 @@ const BackgroundEffect = () => {
     resize();
     window.addEventListener("resize", resize);
 
-    for (let i = 0; i < 40; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.3,
-        r: Math.random() * 2 + 1,
-      });
-    }
-
     const draw = () => {
+      time += 0.002;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      const dotColor = theme === "dark" ? "rgba(232, 93, 58, 0.15)" : "rgba(232, 93, 58, 0.08)";
-      const lineColor = theme === "dark" ? "rgba(232, 93, 58, 0.06)" : "rgba(232, 93, 58, 0.03)";
 
-      particles.forEach((p) => {
-        p.x += p.vx;
-        p.y += p.vy;
-        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+      // Subtle moving gradient orbs
+      const orbs = [
+        { x: canvas.width * 0.3 + Math.sin(time) * 80, y: canvas.height * 0.4 + Math.cos(time * 0.7) * 60, r: 300 },
+        { x: canvas.width * 0.7 + Math.cos(time * 0.8) * 100, y: canvas.height * 0.6 + Math.sin(time * 0.5) * 70, r: 250 },
+      ];
 
+      const alpha = theme === "dark" ? 0.04 : 0.03;
+
+      orbs.forEach((orb) => {
+        const grad = ctx.createRadialGradient(orb.x, orb.y, 0, orb.x, orb.y, orb.r);
+        const color = theme === "dark" ? "255,255,255" : "0,0,0";
+        grad.addColorStop(0, `rgba(${color}, ${alpha})`);
+        grad.addColorStop(1, `rgba(${color}, 0)`);
+        ctx.fillStyle = grad;
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = dotColor;
+        ctx.arc(orb.x, orb.y, orb.r, 0, Math.PI * 2);
         ctx.fill();
       });
-
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 150) {
-            ctx.beginPath();
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = lineColor;
-            ctx.lineWidth = 0.5;
-            ctx.stroke();
-          }
-        }
-      }
 
       animationId = requestAnimationFrame(draw);
     };
@@ -74,12 +54,7 @@ const BackgroundEffect = () => {
     };
   }, [theme]);
 
-  return (
-    <canvas
-      ref={canvasRef}
-      className="fixed inset-0 pointer-events-none z-0"
-    />
-  );
+  return <canvas ref={canvasRef} className="fixed inset-0 pointer-events-none z-0" />;
 };
 
 export default BackgroundEffect;

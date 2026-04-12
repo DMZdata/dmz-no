@@ -8,7 +8,7 @@ import BackgroundEffect from "@/components/BackgroundEffect";
 
 const Index = () => {
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-screen grain">
       <BackgroundEffect />
       <Navbar />
       <Hero />
