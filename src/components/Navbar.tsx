@@ -1,68 +1,68 @@
-import { useState } from "react";
 import { Sun, Moon, Menu, X } from "lucide-react";
+import { useState } from "react";
 import { useTheme } from "./ThemeProvider";
-import { Button } from "./ui/button";
 
 const navLinks = [
   { label: "Hjem", href: "#hjem" },
-  { label: "Tjenester", href: "#tjenester" },
-  { label: "Prosjekter", href: "#prosjekter" },
+  { label: "Utvikling", href: "#utvikling" },
   { label: "Kontakt", href: "#kontakt" },
 ];
 
 const Navbar = () => {
   const { theme, toggleTheme } = useTheme();
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-background/80 border-b border-border">
-      <div className="container mx-auto flex items-center justify-between h-16 px-4">
-        <a href="#hjem" className="font-heading text-xl font-bold text-foreground tracking-tight">
-          DMZ <span className="text-primary">DATA</span> AS
+    <header className="fixed top-0 left-0 right-0 z-50 mix-blend-normal">
+      <div className="mx-auto max-w-7xl flex items-center justify-between px-6 py-5">
+        <a href="#hjem" className="font-heading text-sm font-bold tracking-[0.2em] uppercase text-foreground">
+          DMZ DATA
         </a>
 
-        {/* Desktop */}
-        <div className="hidden md:flex items-center gap-6">
+        <div className="hidden md:flex items-center gap-8">
           {navLinks.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="text-[13px] font-medium tracking-wide uppercase text-muted-foreground hover:text-foreground transition-colors"
             >
               {l.label}
             </a>
           ))}
-          <Button variant="ghost" size="icon" onClick={toggleTheme} aria-label="Toggle theme">
-            {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-          </Button>
+          <button
+            onClick={toggleTheme}
+            className="ml-2 p-2 rounded-full text-muted-foreground hover:text-foreground transition-colors"
+            aria-label="Bytt tema"
+          >
+            {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+          </button>
         </div>
 
-        {/* Mobile */}
         <div className="flex md:hidden items-center gap-2">
-          <Button variant="ghost" size="icon" onClick={toggleTheme} aria-label="Toggle theme">
-            {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-          </Button>
-          <Button variant="ghost" size="icon" onClick={() => setMobileOpen(!mobileOpen)}>
-            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </Button>
+          <button onClick={toggleTheme} className="p-2 text-muted-foreground" aria-label="Bytt tema">
+            {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+          </button>
+          <button onClick={() => setOpen(!open)} className="p-2 text-foreground">
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
         </div>
       </div>
 
-      {mobileOpen && (
-        <div className="md:hidden border-t border-border bg-background/95 backdrop-blur-md">
+      {open && (
+        <div className="md:hidden bg-background/95 backdrop-blur border-b border-border px-6 pb-6">
           {navLinks.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              onClick={() => setMobileOpen(false)}
-              className="block px-6 py-3 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              onClick={() => setOpen(false)}
+              className="block py-3 text-sm tracking-wide uppercase text-muted-foreground hover:text-foreground"
             >
               {l.label}
             </a>
           ))}
         </div>
       )}
-    </nav>
+    </header>
   );
 };
 

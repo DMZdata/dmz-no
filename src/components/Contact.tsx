@@ -1,79 +1,79 @@
-import { MapPin, Building2, ExternalLink, Shield } from "lucide-react";
 import { useState } from "react";
+import { MapPin, ExternalLink, ChevronDown } from "lucide-react";
 
 const Contact = () => {
   const [showPrivacy, setShowPrivacy] = useState(false);
-  const [privacyLang, setPrivacyLang] = useState<"no" | "en">("no");
 
   return (
-    <section id="kontakt" className="py-24 relative z-10">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Om oss & Kontakt</h2>
-        <p className="text-muted-foreground text-center mb-12 max-w-lg mx-auto">
-          Vi har levert teknologiløsninger siden 2001.
-        </p>
+    <section id="kontakt" className="py-32 relative z-10 border-t border-border">
+      <div className="max-w-7xl mx-auto px-8 md:px-16">
+        <div className="flex flex-col md:flex-row gap-16 md:gap-24">
+          {/* Left - Om oss */}
+          <div className="md:w-1/2">
+            <p className="text-[11px] tracking-[0.3em] uppercase text-muted-foreground mb-3">Om oss</p>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6">Hvem er vi</h2>
+            <p className="text-muted-foreground leading-relaxed mb-8">
+              Vi er et lite rådgivende konsulentselskap med kontor i Porsgrunn. Erfaring og kjennskap til produkter, løsninger, konvensjonelle og utradisjonelle gjør oss i stand til å gi nøytrale råd og support til de fleste vanlige typer prosjekter. Vi har bestemt oss for å vente med å gå på BØRS, dog fremtiden er vanskelig å spå.
+            </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          {/* Firmainformasjon */}
-          <div className="rounded-xl border border-border bg-card p-6">
-            <Building2 className="h-8 w-8 text-primary mb-4" />
-            <h3 className="font-semibold text-lg mb-3">Firmainformasjon</h3>
-            <div className="space-y-2 text-sm text-muted-foreground">
-              <p><span className="text-foreground font-medium">Firma:</span> DMZ DATA AS</p>
-              <p><span className="text-foreground font-medium">Stiftet:</span> 2001</p>
-              <p><span className="text-foreground font-medium">Org.nr:</span> 984 433 608</p>
-              <p className="flex items-start gap-1">
-                <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
-                Sandbrekkveien 66, 3949 Porsgrunn
-              </p>
+            <div className="space-y-3 text-sm">
+              <div className="flex items-center gap-2 text-muted-foreground">
+                <span className="text-foreground font-medium w-20">Firma</span>
+                DMZ DATA AS
+              </div>
+              <div className="flex items-center gap-2 text-muted-foreground">
+                <span className="text-foreground font-medium w-20">Stiftet</span>
+                2. november 2001
+              </div>
+              <div className="flex items-center gap-2 text-muted-foreground">
+                <span className="text-foreground font-medium w-20">Org.nr</span>
+                983 904 068 MVA
+              </div>
+              <div className="flex items-start gap-2 text-muted-foreground">
+                <span className="text-foreground font-medium w-20 shrink-0">Adresse</span>
+                <span className="flex items-center gap-1">
+                  <MapPin className="h-3.5 w-3.5 shrink-0" /> Farmannvegen 20B, 3925 Porsgrunn
+                </span>
+              </div>
               <a
-                href="https://w2.brreg.no/enhet/sok/detalj.jsp?orgnr=984433608"
+                href="https://virksomhet.brreg.no/nb/oppslag/enheter/983904068"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-primary hover:underline mt-2"
+                className="inline-flex items-center gap-1.5 text-foreground hover:underline underline-offset-4 mt-4"
               >
                 Se i Brønnøysundregistrene <ExternalLink className="h-3.5 w-3.5" />
               </a>
             </div>
           </div>
 
-          {/* Personvern */}
-          <div className="rounded-xl border border-border bg-card p-6">
-            <Shield className="h-8 w-8 text-primary mb-4" />
-            <h3 className="font-semibold text-lg mb-3">Personvern</h3>
-            <div className="flex gap-2 mb-4">
-              <button
-                onClick={() => { setPrivacyLang("no"); setShowPrivacy(true); }}
-                className={`text-xs px-3 py-1 rounded-full border transition-colors ${privacyLang === "no" && showPrivacy ? "bg-primary text-primary-foreground border-primary" : "border-border text-muted-foreground hover:text-foreground"}`}
-              >
-                Norsk
-              </button>
-              <button
-                onClick={() => { setPrivacyLang("en"); setShowPrivacy(true); }}
-                className={`text-xs px-3 py-1 rounded-full border transition-colors ${privacyLang === "en" && showPrivacy ? "bg-primary text-primary-foreground border-primary" : "border-border text-muted-foreground hover:text-foreground"}`}
-              >
-                English
-              </button>
-            </div>
+          {/* Right - Personvern */}
+          <div className="md:w-1/2">
+            <p className="text-[11px] tracking-[0.3em] uppercase text-muted-foreground mb-3">Juridisk</p>
+            <button
+              onClick={() => setShowPrivacy(!showPrivacy)}
+              className="font-heading text-3xl md:text-4xl font-bold mb-6 flex items-center gap-3 hover:opacity-80 transition-opacity text-left"
+            >
+              Personvern
+              <ChevronDown className={`h-6 w-6 transition-transform ${showPrivacy ? "rotate-180" : ""}`} />
+            </button>
+
             {showPrivacy && (
-              <div className="text-sm text-muted-foreground space-y-2">
-                {privacyLang === "no" ? (
-                  <>
-                    <p>Vi samler ikke inn personopplysninger utover det som er nødvendig for å levere våre tjenester.</p>
-                    <p>Vi bruker informasjonskapsler for grunnleggende funksjonalitet. Ingen data deles med tredjeparter uten samtykke.</p>
-                    <p>Kontakt oss for spørsmål om personvern.</p>
-                  </>
-                ) : (
-                  <>
-                    <p>We do not collect personal data beyond what is necessary to deliver our services.</p>
-                    <p>We use cookies for basic functionality. No data is shared with third parties without consent.</p>
-                    <p>Contact us for privacy inquiries.</p>
-                  </>
-                )}
+              <div className="text-sm text-muted-foreground leading-relaxed space-y-4 animate-fade-up">
+                <p>
+                  Personvernerklæring for nanolæringsappen <strong className="text-foreground">ToiletLearn Chat with AI</strong> og <strong className="text-foreground">ToiletLearn Web Search</strong>, og nettsiden{" "}
+                  <a href="https://sleep-test.org" className="underline hover:text-foreground" target="_blank" rel="noopener noreferrer">sleep-test.org</a>.
+                </p>
+                <p>
+                  Appen og nettsiden samler ikke inn, lagrer eller deler personopplysninger. For appen lagres all fremgang og alle svar lokalt på brukerens enhet, og sendes aldri til noen server.
+                </p>
+                <p>
+                  For nettsiden lagres en anonym/tilfeldig ID for hver fullførte test i en sikret database, sammen med poengsummer i hver kategori. Ingen innlogging, ingen registrering, ingen sporing, ingen kostnad.
+                </p>
               </div>
             )}
+
             {!showPrivacy && (
-              <p className="text-sm text-muted-foreground">Klikk på et språk for å lese vår personvernerklæring.</p>
+              <p className="text-sm text-muted-foreground">Klikk for å lese vår personvernerklæring.</p>
             )}
           </div>
         </div>

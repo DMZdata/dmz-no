@@ -1,64 +1,45 @@
-import { Users, HeartPulse, Home, Cpu, Lightbulb, Code } from "lucide-react";
+import { Users, HeartPulse, Home, Cpu, Shield, Wifi } from "lucide-react";
 
 const services = [
-  {
-    icon: Users,
-    title: "Konsulenttjenester",
-    description: "Rådgivning og prosjektledelse innen IT og teknologi.",
-    span: "md:col-span-2",
-  },
-  {
-    icon: HeartPulse,
-    title: "Helse Tech",
-    description: "Utvikling av digitale helseløsninger og verktøy for helsesektoren.",
-    span: "",
-  },
-  {
-    icon: Home,
-    title: "KNX & Homey",
-    description: "Smarthus-integrasjoner med KNX og Homey-plattformen.",
-    span: "",
-  },
-  {
-    icon: Cpu,
-    title: "Smarthus",
-    description: "Helhetlige smarthus-løsninger for bolig og næring.",
-    span: "",
-  },
-  {
-    icon: Lightbulb,
-    title: "Konsept & Produktutvikling",
-    description: "Fra idé til ferdig produkt — design, prototyping og lansering.",
-    span: "",
-  },
-  {
-    icon: Code,
-    title: "App- og nettutvikling",
-    description: "Moderne apper og nettsider med fokus på brukeropplevelse.",
-    span: "md:col-span-2",
-  },
+  { icon: Users, title: "Konsulenttjenester", text: "Tradisjonelle IT konsulenttjenester." },
+  { icon: HeartPulse, title: "Helse tech", text: "Rådgivning om bruk av teknologi i helse." },
+  { icon: Home, title: "KNX & Homey", text: "KNX-programmering eller Homey magi til bolig og mindre næring." },
+  { icon: Cpu, title: "Smarthus", text: "Generell rådgivning innen smarthusteknologi uten at det koster skjorta." },
+  { icon: Wifi, title: "Nettverk og sikkerhet", text: "Er nettverket ditt sikkert nok? Vi kan gi gode råd." },
+  { icon: Shield, title: "Enkel sikkerhetstesting", text: "Vi kan utføre enkle sikkerhets- og sårbarhetstester." },
 ];
 
 const Services = () => {
   return (
-    <section id="tjenester" className="py-24 relative z-10">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Tjenester</h2>
-        <p className="text-muted-foreground text-center mb-12 max-w-lg mx-auto">
-          Vi tilbyr et bredt spekter av tjenester innen teknologi og utvikling.
-        </p>
+    <section id="tjenester" className="py-32 relative z-10">
+      <div className="max-w-7xl mx-auto px-8 md:px-16">
+        <div className="flex flex-col md:flex-row gap-16">
+          {/* Left sticky label */}
+          <div className="md:w-1/3 md:sticky md:top-32 md:self-start">
+            <p className="text-[11px] tracking-[0.3em] uppercase text-muted-foreground mb-3">Tjenester</p>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold leading-tight">
+              Noen av områdene vi kan bistå med
+            </h2>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
-          {services.map((s) => (
-            <div
-              key={s.title}
-              className={`group rounded-xl border border-border bg-card p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 ${s.span}`}
-            >
-              <s.icon className="h-8 w-8 text-primary mb-4 group-hover:scale-110 transition-transform" />
-              <h3 className="font-semibold text-lg mb-2">{s.title}</h3>
-              <p className="text-sm text-muted-foreground">{s.description}</p>
-            </div>
-          ))}
+          {/* Right service list */}
+          <div className="md:w-2/3 space-y-0">
+            {services.map((s, i) => (
+              <div
+                key={s.title}
+                className="group flex items-start gap-5 py-8 border-b border-border last:border-b-0 hover:pl-2 transition-all duration-300"
+              >
+                <span className="text-muted-foreground/40 text-xs font-mono mt-1 shrink-0">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <s.icon className="h-5 w-5 text-muted-foreground group-hover:text-foreground transition-colors mt-0.5 shrink-0" />
+                <div>
+                  <h3 className="font-heading font-semibold text-lg mb-1">{s.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{s.text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
