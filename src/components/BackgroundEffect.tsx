@@ -30,12 +30,12 @@ const BackgroundEffect = () => {
     window.addEventListener("resize", resize);
 
     // Floating particles
-    const particles: Particle[] = Array.from({ length: 50 }, () => ({
+    const particles: Particle[] = Array.from({ length: 35 }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
       vx: (Math.random() - 0.5) * 0.3,
       vy: (Math.random() - 0.5) * 0.3,
-      r: Math.random() * 3 + 1,
+      r: Math.random() * 2 + 0.8,
     }));
 
     const draw = () => {
@@ -50,7 +50,7 @@ const BackgroundEffect = () => {
         { x: canvas.width * 0.75 + Math.cos(time * 0.6) * 120, y: canvas.height * 0.65 + Math.sin(time * 0.5) * 80, r: 280 },
       ];
 
-      const orbAlpha = isDark ? 0.08 : 0.06;
+      const orbAlpha = isDark ? 0.05 : 0.035;
       orbs.forEach((orb) => {
         const grad = ctx.createRadialGradient(orb.x, orb.y, 0, orb.x, orb.y, orb.r);
         const color = isDark ? "255,255,255" : "0,0,0";
@@ -64,7 +64,7 @@ const BackgroundEffect = () => {
 
       // Floating dots
       const dotColor = isDark ? "255,255,255" : "0,0,0";
-      const dotAlpha = isDark ? 0.18 : 0.12;
+      const dotAlpha = isDark ? 0.12 : 0.08;
 
       particles.forEach((p) => {
         p.x += p.vx;
@@ -81,7 +81,7 @@ const BackgroundEffect = () => {
       });
 
       // Subtle connection lines between nearby particles
-      const lineAlpha = isDark ? 0.08 : 0.05;
+      const lineAlpha = isDark ? 0.05 : 0.03;
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x;
