@@ -3,27 +3,8 @@ import { ArrowDown, Monitor, Apple } from "lucide-react";
 const Hero = () => {
   return (
     <section id="hjem" className="relative min-h-screen flex">
-      {/* Tiny remote help links in top-right corner */}
-      <div className="fixed top-5 right-20 md:right-32 z-50 flex items-center gap-2">
-        <a
-          href="https://download.teamviewer.com/download/TeamViewerQS.exe"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-1 text-[10px] text-muted-foreground/60 hover:text-muted-foreground transition-colors"
-          title="Fjernhjelp Windows"
-        >
-          <Monitor className="h-3 w-3" />
-        </a>
-        <a
-          href="https://download.teamviewer.com/download/TeamViewerQS.dmg"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-1 text-[10px] text-muted-foreground/60 hover:text-muted-foreground transition-colors"
-          title="Fjernhjelp Mac"
-        >
-          <Apple className="h-3 w-3" />
-        </a>
-      </div>
+
+
 
       {/* Left side - text */}
       <div className="flex-1 flex flex-col justify-center px-8 md:px-16 lg:px-24 pt-20">
