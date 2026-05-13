@@ -34,8 +34,9 @@ const Navbar = () => {
               href="https://download.teamviewer.com/download/TeamViewerQS.exe"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-1 text-muted-foreground/50 hover:text-foreground transition-colors"
+              className="p-1 text-muted-foreground hover:text-foreground transition-colors"
               title="Fjernhjelp Windows"
+              aria-label="Last ned fjernhjelp for Windows"
             >
               <Monitor className="h-3.5 w-3.5" />
             </a>
@@ -43,8 +44,9 @@ const Navbar = () => {
               href="https://download.teamviewer.com/download/TeamViewerQS.dmg"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-1 text-muted-foreground/50 hover:text-foreground transition-colors"
+              className="p-1 text-muted-foreground hover:text-foreground transition-colors"
               title="Fjernhjelp Mac"
+              aria-label="Last ned fjernhjelp for Mac"
             >
               <Apple className="h-3.5 w-3.5" />
             </a>
