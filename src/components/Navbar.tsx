@@ -64,7 +64,7 @@ const Navbar = () => {
           <button onClick={toggleTheme} className="p-2 text-muted-foreground" aria-label="Bytt tema">
             {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
           </button>
-          <button onClick={() => setOpen(!open)} className="p-2 text-foreground">
+          <button onClick={() => setOpen(!open)} className="p-2 text-foreground" aria-label={open ? "Lukk meny" : "Åpne meny"} aria-expanded={open}>
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
