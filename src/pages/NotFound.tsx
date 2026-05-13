@@ -6,6 +6,14 @@ const NotFound = () => {
 
   useEffect(() => {
     console.error("404 Error: User attempted to access non-existent route:", location.pathname);
+    const prevTitle = document.title;
+    const prevDesc = document.querySelector('meta[name="description"]')?.getAttribute("content") ?? "";
+    document.title = "Siden ble ikke funnet | DMZ DATA AS";
+    document.querySelector('meta[name="description"]')?.setAttribute("content", "Siden du leter etter finnes ikke. Gå tilbake til forsiden hos DMZ DATA AS.");
+    return () => {
+      document.title = prevTitle;
+      document.querySelector('meta[name="description"]')?.setAttribute("content", prevDesc);
+    };
   }, [location.pathname]);
 
   return (

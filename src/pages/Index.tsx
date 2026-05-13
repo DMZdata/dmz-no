@@ -11,10 +11,12 @@ const Index = () => {
     <div className="relative min-h-screen grain">
       <BackgroundEffect />
       <Navbar />
-      <Hero />
-      <Services />
-      <Projects />
-      <Contact />
+      <main>
+        <Hero />
+        <Services />
+        <Projects />
+        <Contact />
+      </main>
       <Footer />
     </div>
   );

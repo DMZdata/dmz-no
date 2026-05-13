@@ -34,8 +34,9 @@ const Navbar = () => {
               href="https://download.teamviewer.com/download/TeamViewerQS.exe"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-1 text-muted-foreground/50 hover:text-foreground transition-colors"
+              className="p-1 text-muted-foreground hover:text-foreground transition-colors"
               title="Fjernhjelp Windows"
+              aria-label="Last ned fjernhjelp for Windows"
             >
               <Monitor className="h-3.5 w-3.5" />
             </a>
@@ -43,8 +44,9 @@ const Navbar = () => {
               href="https://download.teamviewer.com/download/TeamViewerQS.dmg"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-1 text-muted-foreground/50 hover:text-foreground transition-colors"
+              className="p-1 text-muted-foreground hover:text-foreground transition-colors"
               title="Fjernhjelp Mac"
+              aria-label="Last ned fjernhjelp for Mac"
             >
               <Apple className="h-3.5 w-3.5" />
             </a>
@@ -62,7 +64,7 @@ const Navbar = () => {
           <button onClick={toggleTheme} className="p-2 text-muted-foreground" aria-label="Bytt tema">
             {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
           </button>
-          <button onClick={() => setOpen(!open)} className="p-2 text-foreground">
+          <button onClick={() => setOpen(!open)} className="p-2 text-foreground" aria-label={open ? "Lukk meny" : "Åpne meny"} aria-expanded={open}>
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
