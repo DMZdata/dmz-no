@@ -77,14 +77,6 @@ const Projects = () => {
           ))}
         </div>
 
-        <div className="mt-20 pt-10 border-t border-border">
-          <h3 className="font-heading text-lg font-semibold mb-3">Hvorfor utvikle noe?</h3>
-          <div className="flex flex-wrap gap-x-10 gap-y-2 text-sm text-muted-foreground">
-            <span>🧩 Læring — enklere å bygge videre</span>
-            <span>⚡ Rask, responsiv og robust</span>
-            <span>🔍 Deler det meste på GitHub </span>
-          </div>
-        </div>
       </div>
     </section>
   );
