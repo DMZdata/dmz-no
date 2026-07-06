@@ -2,6 +2,12 @@ import { ExternalLink } from "lucide-react";
 
 const projects = [
   {
+    title: "UTFORDRE.NO",
+    description: "Utfordre deltagerne med flervalg, skalaspørsmål og ordskyer som oppdateres live, eller helt vanlige spørreundersøkelser. Sammenlign Utfordre med Questback, Mentimeter eller Kahoot. Utfordre kjapt venner og kjente, uten registrering.",
+    url: "https://utfordre.no",
+    tags: ["Web", "Quiz", "Konkurranse"],
+  },
+  {
     title: "Sleep Test",
     description: "En modulær, flerspråklig nettløsning som hjelper folk som sliter med søvn. Brukeren svarer på spørsmål og får en personlig rapport med forslag til tiltak.",
     url: "https://sleep-test.org",
