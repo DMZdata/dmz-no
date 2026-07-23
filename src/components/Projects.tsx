@@ -46,7 +46,7 @@ const Projects = () => {
       <div className="max-w-7xl mx-auto px-8 md:px-16">
         <p className="text-[11px] tracking-[0.3em] uppercase text-muted-foreground mb-3">Utvikling</p>
         <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4 max-w-lg">
-          Vi bygger små, skalerbare og nyttige ting
+          Noe av det vi har laget
         </h2>
         <p className="text-muted-foreground mb-16 max-w-md">
           Fra smarthjem-integrasjoner til helsefokuserte nettapper.
