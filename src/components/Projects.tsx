@@ -2,6 +2,12 @@ import { ExternalLink } from "lucide-react";
 
 const projects = [
   {
+    title: "familiehytte.no",
+    description: "Gratis app for dere som deler hytte. Kalenderen viser hvem som kommer når, del en handlelisten, og før et enkelt utleggsregnskap. Ingen krangling eller styr.",
+    url: "https://familiehytte.no",
+    tags: ["Lovable", "web", "familie"],
+  },
+  {
     title: "UTFORDRE.NO",
     description: "Utfordre deltagerne med flervalg, skalaspørsmål og ordskyer som oppdateres live, eller helt vanlige spørreundersøkelser. Sammenlign Utfordre med Questback, Mentimeter eller Kahoot. Utfordre kjapt venner og kjente, uten registrering.",
     url: "https://utfordre.no",
