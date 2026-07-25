@@ -208,7 +208,7 @@ const Startsiden = () => {
         </div>
 
         <h1 className="font-heading text-3xl md:text-5xl font-extrabold tracking-tight mb-2">
-          Startsiden
+          Fattern`s startside
         </h1>
         <p className="text-muted-foreground mb-8 md:mb-10 text-base md:text-lg">
           Søk og snarveier — enkelt og oversiktlig.
