@@ -200,7 +200,6 @@ const WeatherWidget = () => {
 
   return (
     <aside aria-label="Værvarsel" className="flex flex-col gap-3">
-      <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Vær</div>
       {error && <div className="text-sm text-muted-foreground">Kunne ikke laste vær.</div>}
       {!error && !data && (
         <div className="space-y-3">
