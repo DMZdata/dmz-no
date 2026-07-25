@@ -215,62 +215,66 @@ const Startsiden = () => {
           Søk og snarveier — enkelt og oversiktlig.
         </p>
 
-        {/* Søkeblokk */}
-        <div className="grid gap-3 md:gap-4 mb-10 md:mb-12 max-w-3xl">
-          <SearchForm
-            action="https://www.google.no/search"
-            placeholder="Søk på Google"
-            buttonLabel="Google"
-            icon={<Search className="h-5 w-5" />}
-          />
-          <SearchForm
-            action="https://www.google.no/search"
-            placeholder="Spør Googles AI (AI Mode)"
-            buttonLabel="AI-svar"
-            icon={<Sparkles className="h-5 w-5" />}
-            hidden={{ udm: "50" }}
-          />
-          <SearchForm
-            action="https://www.google.no/search"
-            placeholder="Søk etter bilder"
-            buttonLabel="Bilder"
-            icon={<ImageIcon className="h-5 w-5" />}
-            hidden={{ tbm: "isch" }}
-          />
-          <SearchForm
-            action="https://www.ebay.com/sch/i.html"
-            placeholder="Søk på eBay"
-            buttonLabel="eBay"
-            icon={<Search className="h-5 w-5" />}
-            paramName="_nkw"
-          />
-          <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm md:text-base pt-1">
-            <a
-              href="https://www.ebay.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Åpne eBay <ExternalLink className="h-3.5 w-3.5" />
-            </a>
-            <a
-              href="https://www.google.no"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Åpne Google <ExternalLink className="h-3.5 w-3.5" />
-            </a>
-            <a
-              href="https://www.youtube.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Åpne YouTube <ExternalLink className="h-3.5 w-3.5" />
-            </a>
+        {/* Søk + vær */}
+        <div className="grid gap-6 md:gap-8 md:grid-cols-[minmax(0,1fr)_260px] mb-10 md:mb-12">
+          <div className="grid gap-3 md:gap-4 max-w-3xl">
+            <SearchForm
+              action="https://www.google.no/search"
+              placeholder="Søk på Google"
+              buttonLabel="Google"
+              icon={<Search className="h-5 w-5" />}
+            />
+            <SearchForm
+              action="https://www.google.no/search"
+              placeholder="Spør Googles AI (AI Mode)"
+              buttonLabel="AI-svar"
+              icon={<Sparkles className="h-5 w-5" />}
+              hidden={{ udm: "50" }}
+            />
+            <SearchForm
+              action="https://www.google.no/search"
+              placeholder="Søk etter bilder"
+              buttonLabel="Bilder"
+              icon={<ImageIcon className="h-5 w-5" />}
+              hidden={{ tbm: "isch" }}
+            />
+            <SearchForm
+              action="https://www.ebay.com/sch/i.html"
+              placeholder="Søk på eBay"
+              buttonLabel="eBay"
+              icon={<Search className="h-5 w-5" />}
+              paramName="_nkw"
+            />
+            <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm md:text-base pt-1">
+              <a
+                href="https://www.ebay.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors"
+              >
+                Åpne eBay <ExternalLink className="h-3.5 w-3.5" />
+              </a>
+              <a
+                href="https://www.google.no"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors"
+              >
+                Åpne Google <ExternalLink className="h-3.5 w-3.5" />
+              </a>
+              <a
+                href="https://www.youtube.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors"
+              >
+                Åpne YouTube <ExternalLink className="h-3.5 w-3.5" />
+              </a>
+            </div>
           </div>
+          <WeatherWidget />
         </div>
+
 
         {/* Lenker */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
