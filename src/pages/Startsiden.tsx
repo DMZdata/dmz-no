@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Sun, Moon, Search, Image as ImageIcon, Sparkles, ExternalLink } from "lucide-react";
 import BackgroundEffect from "@/components/BackgroundEffect";
+import WeatherWidget from "@/components/WeatherWidget";
 import { useTheme } from "@/components/ThemeProvider";
 
 type Link = { label: string; href: string };
