@@ -84,9 +84,19 @@ const summarize = (series: Series[], dayOffset: number, label: string): DaySumma
   const target = new Date();
   target.setHours(0, 0, 0, 0);
   target.setDate(target.getDate() + dayOffset);
-  const dayStr = target.toISOString().slice(0, 10);
+  const y = target.getFullYear();
+  const m = String(target.getMonth() + 1).padStart(2, "0");
+  const d = String(target.getDate()).padStart(2, "0");
+  const dayStr = `${y}-${m}-${d}`;
 
-  const today = series.filter((s) => s.time.slice(0, 10) === dayStr);
+  // Match against local date derived from the UTC timestamp
+  const today = series.filter((s) => {
+    const dt = new Date(s.time);
+    const ly = dt.getFullYear();
+    const lm = String(dt.getMonth() + 1).padStart(2, "0");
+    const ld = String(dt.getDate()).padStart(2, "0");
+    return `${ly}-${lm}-${ld}` === dayStr;
+  });
   if (today.length === 0) return null;
 
   const temps = today
@@ -190,7 +200,6 @@ const WeatherWidget = () => {
 
   return (
     <aside aria-label="Værvarsel" className="flex flex-col gap-3">
-      <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Vær</div>
       {error && <div className="text-sm text-muted-foreground">Kunne ikke laste vær.</div>}
       {!error && !data && (
         <div className="space-y-3">
