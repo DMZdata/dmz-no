@@ -41,6 +41,11 @@ const projects = [
     description: "Homey-app for henting av engelske dad-jokes, Chuck Norris (RIP) fakta, eller bare en dårlig vits. Lag en flow som henter ny joke og chromecaster en dad-joke hver gang du kommer hjem fra jobb.",
     url: "https://homey.app/no-no/app/com.dmz.dadjokesplus/DadJokes-Plus/",
   },
+  {
+    title: "hjelpetjenesten.no",
+    description: "Digital fremtidsfullmakt for 399 kr. Svar på noen spørsmål, få en ferdig PDF, og unngå at Statsforvalteren bestemmer hvem som skal selge campingvogna di.",
+    url: "https://hjelpetjenesten.no",
+  },
 ];
 
 const Projects = () => {
