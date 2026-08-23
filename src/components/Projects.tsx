@@ -5,44 +5,37 @@ const projects = [
     title: "familiehytte.no",
     description: "Gratis app for dere som deler hytte. Kalenderen viser hvem som kommer når, del en handlelisten, og før et enkelt utleggsregnskap. Ingen krangling eller styr.",
     url: "https://familiehytte.no",
-    tags: ["Lovable", "web", "familie"],
   },
   {
     title: "UTFORDRE.NO",
     description: "Utfordre deltagerne med flervalg, skalaspørsmål og ordskyer som oppdateres live, eller helt vanlige spørreundersøkelser. Sammenlign Utfordre med Questback, Mentimeter eller Kahoot. Utfordre kjapt venner og kjente, uten registrering.",
     url: "https://utfordre.no",
-    tags: ["Web", "Quiz", "Konkurranse"],
   },
   {
     title: "Sleep Test",
     description: "En modulær, flerspråklig nettløsning som hjelper folk som sliter med søvn. Brukeren svarer på spørsmål og får en personlig rapport med forslag til tiltak.",
     url: "https://sleep-test.org",
-    tags: ["Vercel", "MongoDB", "Next.js", "i18n"],
   },
   {
     title: "Brain Test",
     description: "Kognitiv evnetest og IQ-estimat — utforsk dine kognitive evner gjennom spørsmål fordelt på 5 kategorier. Konkurrer med venner på 13 språk.",
     url: "https://brain-test.org",
-    tags: ["Lovable", "Helse"],
   },
   {
     title: "Mindset Test",
     description: "Fastlåst eller er talent trenbart, svar på noen spørsmål og få en forskningsbasert tilbakemelding.",
     url: "https://mindset-test.org",
-    tags: ["Web", "Helse"],
   },
   {
     title: "Vita Test",
     description: "En gammel ide om matching og problemløsning i livet, nå med litt AI-inspirert fokus",
     url: "https://vita-test.org",
-    tags: ["Web", "Helse"],
   },
 // ... keep existing code
   {
     title: "CAx6.6",
     description: "Homey-app for styring av Russound CA-serie multirom-forsterkere via RS-232 over TCP.",
     url: "https://homey.app/no-no/app/com.dmz.russound/CAx6.6/test/",
-    tags: ["Homey", "Russound", "RS-232"],
   },
 ];
 
@@ -67,13 +60,6 @@ const Projects = () => {
               rel="noopener noreferrer"
               className="group block"
             >
-              <div className="flex flex-wrap gap-2 mb-3">
-                {p.tags.map((t) => (
-                  <span key={t} className="text-[10px] tracking-wider uppercase text-muted-foreground border border-border px-2 py-0.5 rounded-full">
-                    {t}
-                  </span>
-                ))}
-              </div>
               <h3 className="font-heading text-xl font-semibold mb-2 flex items-center gap-2 group-hover:underline decoration-1 underline-offset-4">
                 {p.title}
                 <ExternalLink className="h-3.5 w-3.5 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
