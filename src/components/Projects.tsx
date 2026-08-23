@@ -8,7 +8,7 @@ const projects = [
   },
   {
     title: "hjelpetjenesten.no",
-    description: "Digital fremtidsfullmakt for 399 kr. Svar på noen spørsmål, få en ferdig PDF, og unngå at Statsforvalteren bestemmer hvem som skal selge campingvogna di.",
+    description: "Digital fremtidsfullmakt eller vedvarende fullmakt for 399 kr. Svar på noen spørsmål, få en ferdig PDF klar til signering, og unngå at Statsforvalteren bestemmer hvem som skal selge campingvogna di.",
     url: "https://hjelpetjenesten.no",
   },
   {
