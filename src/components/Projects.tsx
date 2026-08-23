@@ -7,6 +7,11 @@ const projects = [
     url: "https://familiehytte.no",
   },
   {
+    title: "hjelpetjenesten.no",
+    description: "Digital fremtidsfullmakt for 399 kr. Svar på noen spørsmål, få en ferdig PDF, og unngå at Statsforvalteren bestemmer hvem som skal selge campingvogna di.",
+    url: "https://hjelpetjenesten.no",
+  },
+  {
     title: "UTFORDRE.NO",
     description: "Utfordre deltagerne med flervalg, skalaspørsmål og ordskyer som oppdateres live, eller helt vanlige spørreundersøkelser. Sammenlign Utfordre med Questback, Mentimeter eller Kahoot. Utfordre kjapt venner og kjente, uten registrering.",
     url: "https://utfordre.no",
