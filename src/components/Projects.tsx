@@ -31,11 +31,15 @@ const projects = [
     description: "En gammel ide om matching og problemløsning i livet, nå med litt AI-inspirert fokus",
     url: "https://vita-test.org",
   },
-// ... keep existing code
   {
     title: "CAx6.6",
     description: "Homey-app for styring av Russound CA-serie multirom-forsterkere via RS-232 over TCP.",
     url: "https://homey.app/no-no/app/com.dmz.russound/CAx6.6/test/",
+  },
+  {
+    title: "DadJokes Plus for Homey",
+    description: "Homey-app for henting av engelske dad-jokes, Chuck Norris (RIP) fakta, eller bare en dårlig vits. Lag en flow som henter ny joke og chromecaster en dad-joke hver gang du kommer hjem fra jobb.",
+    url: "https://homey.app/no-no/app/com.dmz.dadjokesplus/DadJokes-Plus/",
   },
 ];
 
