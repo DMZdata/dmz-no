@@ -1,6 +1,6 @@
 # DMZ.NO
 
-jeg vil flytte mitt nettsted www.dmz.no og med kildekode https://github.com/anderswr/www-dmz, over hit - og til en ny moderne fancy enkel nettside. Den må ha med seg det som er av info fra dagens side. Enkel rolig bakgrunnseffekt, må ha mørk og lys - knapp i toppen.
+nettsted www.dmz.no og med kildekode https://github.com/anderswr/www-dmz, over hit - og til en ny moderne fancy enkel nettside. Den må ha med seg det som er av info fra dagens side. Enkel rolig bakgrunnseffekt, må ha mørk og lys - knapp i toppen.
 
 
 ## Development
